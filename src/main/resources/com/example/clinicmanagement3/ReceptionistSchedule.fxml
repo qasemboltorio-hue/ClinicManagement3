@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ReceptionistScheduleController"
+            prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: white;">
+
+    <children>
+
+        <!-- ======== Top Header ======== -->
+        <Pane prefHeight="61.0" prefWidth="1280.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="37.0" layoutY="15.0" text="MediCore" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+
+                <Button layoutX="1140.0" layoutY="10.0"
+                        text="Sign Out"
+                        onAction="#handleSignOut"
+                        prefHeight="42.0" prefWidth="120.0"
+                        style="-fx-background-color: white;
+                               -fx-text-fill: #184E74;
+                               -fx-background-radius: 25;
+                               -fx-border-radius: 25;
+                               -fx-font-weight: bold;">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+
+        <!-- ======== Page Title ======== -->
+        <Label layoutX="60.0" layoutY="90.0"
+               text="DOCTOR SCHEDULE"
+               style="-fx-font-weight: bold; -fx-text-fill: #184E74;">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- ======== Table ======== -->
+        <TableView fx:id="doctorTable" layoutX="60.0" layoutY="150.0"
+                   prefWidth="1160.0" prefHeight="450.0">
+            <columns>
+                <TableColumn text="Doctor" prefWidth="200.0" fx:id="colDoctor"/>
+                <TableColumn text="Specialty" prefWidth="200.0" fx:id="colSpecialty"/>
+                <TableColumn text="Available Days" prefWidth="250.0" fx:id="colDays"/>
+                <TableColumn text="Time" prefWidth="250.0" fx:id="colTime"/>
+                <TableColumn text="Status" prefWidth="150.0" fx:id="colStatus"/>
+            </columns>
+        </TableView>
+
+        <!-- ======== Buttons (Bottom) ======== -->
+        <Button fx:id="backButton" layoutX="60.0" layoutY="630.0"
+                text="Back" onAction="#handleBack"
+                prefWidth="120.0" prefHeight="40.0"
+                style="-fx-background-color: #A9B5C2; -fx-text-fill: white; -fx-background-radius: 10;">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Button>
+
+        <Button fx:id="editButton" layoutX="1080.0" layoutY="630.0"
+                text="Edit" onAction="#handleEdit"
+                prefWidth="140.0" prefHeight="40.0"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-background-radius: 10;">
+            <font>
+                <Font name="Arial Bold" size="16.0" />
+            </font>
+        </Button>
+
+    </children>
+</AnchorPane>

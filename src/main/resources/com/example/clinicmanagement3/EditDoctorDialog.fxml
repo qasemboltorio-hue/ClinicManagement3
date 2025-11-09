@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.clinicmanagement3.EditDoctorDialogController"
+      alignment="CENTER" spacing="10"
+      prefWidth="400.0" prefHeight="300.0"
+      style="-fx-background-color: white; -fx-padding: 20;">
+
+    <Label text="Edit Doctor Schedule" style="-fx-text-fill: #184E74;">
+        <font>
+            <Font name="Arial Bold" size="20.0"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT"/>
+            <ColumnConstraints halignment="LEFT" prefWidth="200"/>
+        </columnConstraints>
+
+        <Label text="Available Days:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="daysField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Time:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="timeField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ChoiceBox fx:id="statusChoice" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button text="Cancel" onAction="#handleCancel"
+                style="-fx-background-color: #A9B5C2; -fx-text-fill: white; -fx-background-radius: 10;"
+                prefWidth="100"/>
+        <Button text="Save" onAction="#handleSave"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-background-radius: 10;"
+                prefWidth="100"/>
+    </HBox>
+
+</VBox>

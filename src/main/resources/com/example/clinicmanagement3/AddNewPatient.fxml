@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.AddNewPatientController"
+            prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: #ffffff;">
+
+    <children>
+        <Pane prefHeight="61.0" prefWidth="1280.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="37.0" layoutY="15.0" text="MediCore" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="30.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <Label layoutX="74.0" layoutY="120.0" text="NEW PATIENT REGISTRATION" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+
+        <GridPane layoutX="74.0" layoutY="180.0" vgap="15" hgap="15">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="150.0" />
+                <ColumnConstraints prefWidth="400.0" />
+            </columnConstraints>
+
+            <children>
+                <Label text="Full Name:" GridPane.rowIndex="0"/>
+                <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Gender:" GridPane.rowIndex="1"/>
+                <TextField fx:id="genderField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Age:" GridPane.rowIndex="2"/>
+                <TextField fx:id="ageField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Birthdate:" GridPane.rowIndex="3"/>
+                <TextField fx:id="birthdateField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Address:" GridPane.rowIndex="4"/>
+                <TextField fx:id="addressField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Contact No.:" GridPane.rowIndex="5"/>
+                <TextField fx:id="contactField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Emergency Contact:" GridPane.rowIndex="6"/>
+                <TextField fx:id="emergencyContactField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </children>
+        </GridPane>
+
+        <Button layoutX="74.0" layoutY="640.0" text="Back"
+                style="-fx-background-color: #184E74; -fx-text-fill: white;"
+                onAction="#handleBack" prefWidth="80"/>
+
+        <Button layoutX="1080.0" layoutY="640.0" text="Add New Patient"
+                style="-fx-background-color: #184E74; -fx-text-fill: white;"
+                onAction="#handleAddPatient" prefWidth="150"/>
+    </children>
+</AnchorPane>

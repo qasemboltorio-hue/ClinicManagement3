@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefWidth="900.0" prefHeight="600.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ReceptionistQueueController">
+
+    <children>
+        <!-- Header -->
+        <Pane prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="30.0" layoutY="15.0" text="MediCore" textFill="white">
+                    <font>
+                        <Font name="Arial Bold" size="28.0" />
+                    </font>
+                </Label>
+
+                <Button text="Sign Out"
+                        fx:id="signOutButton"
+                        layoutX="760.0" layoutY="10.0"
+                        prefWidth="100.0" prefHeight="40.0"
+                        onAction="#handleSignOut"
+                        style="-fx-background-color: white; -fx-text-fill: #184E74; -fx-background-radius: 25; -fx-font-weight: bold;" />
+            </children>
+        </Pane>
+
+        <!-- Title -->
+        <Label layoutX="30.0" layoutY="80.0" text="QUEUE MANAGEMENT">
+            <font>
+                <Font name="Arial Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <!-- Table -->
+        <TableView fx:id="queueTable" layoutX="30.0" layoutY="130.0" prefWidth="840.0" prefHeight="350.0">
+            <columns>
+                <TableColumn fx:id="queueNoColumn" text="Queue No." prefWidth="100.0"/>
+                <TableColumn fx:id="patientNameColumn" text="Patient Name" prefWidth="250.0"/>
+                <TableColumn fx:id="appointmentTimeColumn" text="Appointment Time" prefWidth="200.0"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="150.0"/>
+                <TableColumn fx:id="actionColumn" text="Action" prefWidth="140.0"/>
+            </columns>
+        </TableView>
+
+        <!-- Back Button -->
+        <Button fx:id="backButton" layoutX="30.0" layoutY="510.0" text="Back"
+                onAction="#handleBack"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </children>
+</AnchorPane>

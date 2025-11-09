@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ViewExistingRegistrationsController"
+            prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: #ffffff;">
+
+    <children>
+        <!-- ===== Header ===== -->
+        <Pane prefHeight="61.0" prefWidth="1280.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="37.0" layoutY="15.0" text="MediCore" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="30.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <!-- ===== Title ===== -->
+        <Label layoutX="74.0" layoutY="120.0" text="PATIENT REGISTRATION"
+               style="-fx-font-size: 24; -fx-font-weight: bold;" />
+
+        <!-- ===== Search Bar ===== -->
+        <HBox layoutX="74.0" layoutY="160.0" spacing="10">
+            <TextField fx:id="searchField" promptText="Search by Patient Name"
+                       prefWidth="350.0" style="-fx-font-size: 14;" />
+            <Button fx:id="searchButton" text="Search" onAction="#handleSearch"
+                    style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;"
+                    prefWidth="100.0" />
+        </HBox>
+
+        <!-- ===== Table ===== -->
+        <TableView fx:id="patientTable" layoutX="74.0" layoutY="210.0"
+                   prefWidth="1130.0" prefHeight="400.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="280.0"/>
+                <TableColumn fx:id="ageColumn" text="Age" prefWidth="120.0"/>
+                <TableColumn fx:id="genderColumn" text="Gender" prefWidth="180.0"/>
+                <TableColumn fx:id="dateColumn" text="Day Of Registration" prefWidth="280.0"/>
+                <TableColumn fx:id="actionColumn" text="Action" prefWidth="250.0"/>
+            </columns>
+        </TableView>
+
+        <!-- ===== Back Button ===== -->
+        <Button layoutX="74.0" layoutY="640.0" text="Back"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-background-radius: 20;"
+                onAction="#handleBack" prefWidth="80" prefHeight="35"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ReceptionistReportsController"
+            prefWidth="1280" prefHeight="720"
+            style="-fx-background-color: white;">
+
+    <!-- ======== Top Header ======== -->
+    <top>
+        <Pane prefHeight="70.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="30.0" layoutY="18.0" text="MediCore" textFill="white">
+                    <font><Font name="Arial Bold" size="28.0" /></font>
+                </Label>
+                <Button layoutX="1150.0" layoutY="15.0" text="Sign Out"
+                        onAction="#handleSignOut"
+                        style="-fx-background-color: white; -fx-text-fill: #184E74;
+                               -fx-background-radius: 25; -fx-font-weight: bold;"
+                        prefWidth="100" prefHeight="40" />
+            </children>
+        </Pane>
+    </top>
+
+    <!-- ======== Sidebar Buttons ======== -->
+    <left>
+        <VBox spacing="15" style="-fx-background-color: #f2f8ff; -fx-padding: 20;">
+            <children>
+                <Label text="ANALYTICS" style="-fx-font-weight: bold; -fx-font-size: 20;" />
+                <Button text="Total Patients" fx:id="btnTotalPatients" onAction="#showTotalPatients"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="Completed Appointments" fx:id="btnCompletedAppointments" onAction="#showCompletedAppointments"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="New Patients" fx:id="btnNewPatients" onAction="#showNewPatients"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="Top 5 Diagnoses" fx:id="btnTopDiagnoses" onAction="#showTopDiagnoses"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="Prescriptions Issued" fx:id="btnPrescriptions" onAction="#showPrescriptions"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="Monthly Total Revenue" fx:id="btnRevenue" onAction="#showRevenue"
+                        style="-fx-background-color: #cce5ff;" prefWidth="200" />
+                <Button text="Back" onAction="#handleBack"
+                        style="-fx-background-color: #184E74; -fx-text-fill: white;
+                               -fx-font-weight: bold; -fx-background-radius: 10;"
+                        prefWidth="200" />
+            </children>
+        </VBox>
+    </left>
+
+    <!-- ======== Main Chart Area ======== -->
+    <center>
+        <StackPane fx:id="chartArea" style="-fx-padding: 30;">
+            <Label text="Select a category to view analytics."
+                   style="-fx-font-size: 18; -fx-text-fill: gray;" />
+        </StackPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0"
+            style="-fx-background-color: #ffffff;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ReceptionistDashboardController">
+
+    <children>
+        <!-- ======== Top Blue Header ======== -->
+        <Pane prefHeight="61.0" prefWidth="1280.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="37.0" layoutY="15.0" text="MediCore" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+
+                <Button fx:id="signOutButton"
+                        layoutX="1140.0" layoutY="10.0"
+                        mnemonicParsing="false" onAction="#handleSignOut"
+                        prefHeight="42.0" prefWidth="120.0"
+                        text="Sign Out"
+                        style="-fx-background-color: white;
+                               -fx-text-fill: #184E74;
+                               -fx-background-radius: 25;
+                               -fx-border-radius: 25;
+                               -fx-border-color: #ffffff;
+                               -fx-font-weight: bold;">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </Pane>
+
+        <!-- ======== Welcome Label ======== -->
+        <Label layoutX="74.0" layoutY="90.0" text="Welcome, Receptionist!"
+               style="-fx-text-fill: #184E74;">
+            <font>
+                <Font name="Arial Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- ======== Navigation Buttons ======== -->
+        <!-- ======== Individual Navigation Buttons with Rounded Corners ======== -->
+
+        <Button fx:id="appointmentsPane" layoutX="74.0" layoutY="150.0"
+                mnemonicParsing="false" onMouseClicked="#handleAppointmentsClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Appointments" />
+
+        <Button fx:id="registrationPane" layoutX="380.0" layoutY="150.0"
+                mnemonicParsing="false" onMouseClicked="#handleRegistrationClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Patient Registration" />
+
+        <Button fx:id="schedulePane" layoutX="692.0" layoutY="150.0"
+                mnemonicParsing="false" onMouseClicked="#handleScheduleClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Doctor Schedule" />
+
+        <Button fx:id="queuePane" layoutX="74.0" layoutY="280.0"
+                mnemonicParsing="false" onMouseClicked="#handleQueueClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Queue Management" />
+
+        <Button fx:id="billingPane" layoutX="380.0" layoutY="280.0"
+                mnemonicParsing="false" onMouseClicked="#handleBillingClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Billing" />
+
+        <Button fx:id="reportsPane" layoutX="692.0" layoutY="280.0"
+                mnemonicParsing="false" onMouseClicked="#handleReportsClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Reports" />
+
+        <Button fx:id="labResultsPane" layoutX="74.0" layoutY="410.0"
+                mnemonicParsing="false" onMouseClicked="#handleLabResultsClick"
+                prefHeight="100.0" prefWidth="249.0"
+                style="-fx-background-color: #EDF5FF;
+               -fx-text-fill: #000000;
+               -fx-background-radius: 20;
+               -fx-border-radius: 20;
+               -fx-font-weight: bold;"
+                text="Laboratory Results" />
+
+
+        <!-- ======== Dashboard Side Panel (Scrollable with Charts) ======== -->
+        <ScrollPane layoutX="980.0" layoutY="90.0" prefWidth="270.0" prefHeight="580.0"
+                    style="-fx-background-color: transparent;" fitToWidth="true" pannable="true">
+            <content>
+                <VBox spacing="20.0"
+                      style="-fx-background-color: #EDF5FF; -fx-border-color: #d0e3ff; -fx-border-width: 1;">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <Label text="Dashboard">
+                        <font>
+                            <Font name="Arial Bold" size="22.0" />
+                        </font>
+                    </Label>
+
+                    <VBox spacing="5.0">
+                        <Label text="Today's Appointments:" style="-fx-font-weight: bold;" />
+                        <Label text="Total: 35" />
+                        <Label text="Completed: 12" />
+                        <Label text="Waiting: 18" />
+                        <Label text="Canceled: 5" />
+                    </VBox>
+
+                    <Label text="Total Patients Over Time" style="-fx-font-weight: bold;" />
+                    <LineChart fx:id="patientsLineChart" prefHeight="150.0" prefWidth="230.0">
+                        <xAxis>
+                            <CategoryAxis label="Date" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Patients" />
+                        </yAxis>
+                    </LineChart>
+
+                    <Label text="Top 5 Diagnoses" style="-fx-font-weight: bold;" />
+                    <PieChart fx:id="diagnosisPieChart" prefHeight="150.0" prefWidth="230.0" />
+
+                    <Label text="Completed Appointments" style="-fx-font-weight: bold;" />
+                    <LineChart fx:id="completedAppointmentsChart" prefHeight="150.0" prefWidth="230.0">
+                        <xAxis>
+                            <CategoryAxis label="Date" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Appointments" />
+                        </yAxis>
+                    </LineChart>
+
+                    <Label text="Notifications:" style="-fx-font-weight: bold;" />
+                    <Label text="• Maria Dela Cruz checked in at 9:00 AM" wrapText="true" />
+                    <Label text="• Albus Dumbledore requested reschedule" wrapText="true" />
+                </VBox>
+            </content>
+        </ScrollPane>
+
+    </children>
+</AnchorPane>

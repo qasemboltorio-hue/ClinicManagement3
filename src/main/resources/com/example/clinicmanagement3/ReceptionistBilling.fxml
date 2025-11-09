@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.clinicmanagement3.ReceptionistBillingController"
+            prefWidth="1280.0" prefHeight="720.0"
+            style="-fx-background-color: white;">
+
+    <children>
+
+        <!-- Header -->
+        <Pane prefWidth="1280.0" prefHeight="60.0" style="-fx-background-color: #184E74;">
+            <children>
+                <Label layoutX="40.0" layoutY="15.0" text="MediCore" textFill="WHITE">
+                    <font><Font name="Arial Bold" size="28.0" /></font>
+                </Label>
+                <Button layoutX="1140.0" layoutY="10.0" prefWidth="120.0" prefHeight="40.0"
+                        text="Sign Out" fx:id="signOutButton" onAction="#handleSignOut"
+                        style="-fx-background-color: white; -fx-text-fill: #184E74; -fx-background-radius: 25;">
+                    <font><Font name="Arial Bold" size="16.0" /></font>
+                </Button>
+            </children>
+        </Pane>
+
+        <!-- Billing Summary -->
+        <HBox layoutX="80.0" layoutY="100.0" spacing="40.0">
+            <children>
+                <VBox alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EDF5FF; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="Total Income Today" />
+                    <Label fx:id="totalIncomeLabel" text="₱0" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                </VBox>
+                <VBox alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EDF5FF; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="Patient Billed" />
+                    <Label fx:id="patientsBilledLabel" text="0" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                </VBox>
+                <VBox alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EDF5FF; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="Pending Payments" />
+                    <Label fx:id="pendingPaymentsLabel" text="0" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                </VBox>
+                <VBox alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EDF5FF; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="Invoices Generated" />
+                    <Label fx:id="invoicesGeneratedLabel" text="0" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- Invoice Table -->
+        <TableView fx:id="invoiceTable" layoutX="80.0" layoutY="250.0" prefWidth="1000.0" prefHeight="300.0">
+            <columns>
+                <TableColumn text="Invoice No." prefWidth="120.0" fx:id="colInvoiceNo"/>
+                <TableColumn text="Patient Name" prefWidth="200.0" fx:id="colPatient"/>
+                <TableColumn text="Doctor" prefWidth="150.0" fx:id="colDoctor"/>
+                <TableColumn text="Service" prefWidth="150.0" fx:id="colService"/>
+                <TableColumn text="Total Amount" prefWidth="150.0" fx:id="colAmount"/>
+                <TableColumn text="Status" prefWidth="150.0" fx:id="colStatus"/>
+            </columns>
+        </TableView>
+
+        <!-- Buttons -->
+        <Button fx:id="newInvoiceButton" layoutX="1100.0" layoutY="250.0" text="+ New Invoice"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-background-radius: 8;"
+                onAction="#handleNewInvoice" />
+        <Button fx:id="backButton" layoutX="80.0" layoutY="580.0" text="Back"
+                style="-fx-background-color: #184E74; -fx-text-fill: white; -fx-background-radius: 8;"
+                onAction="#handleBack" />
+
+    </children>
+</AnchorPane>
